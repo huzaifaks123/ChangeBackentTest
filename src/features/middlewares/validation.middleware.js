@@ -57,7 +57,7 @@ export const validateLoginRequest = async (req, res, next) => {
             .custom(async (email, { req }) => {
                 const isVerified = await userModel.verifyUser(email);
                 if (!isVerified) {
-                    throw new Error('Invaid Credentials');
+                    throw new Error('Invalid Credentials');
                 }
             }),
     ]
